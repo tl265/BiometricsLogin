@@ -27,13 +27,27 @@ class ViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegate 
         var reasonString = "Authentication is needed to access "
         reasonString += websiteName
         
+        var url:NSURL = NSURL(string: "http://xxx.xxx.xxx.xxx/receiver.php")!	// replace with real URL or IP address when compiling
+        var request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "POST"
+        var bodyData = ""
+        
         // Check if the device can evalutate the policy.
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error){
             [context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?)->Void in
                 if success {
                     dispatch_async(dispatch_get_main_queue()){
-                        self.messageLabel.text = "Sending login info to " + websiteName
+                        self.messageLabel.text = "timestamp " + websiteName + " deviceid " + UIDevice.currentDevice().identifierForVendor.UUIDString
                     }
+                    bodyData = "timestamp=" + websiteName + "&deviceid=" + UIDevice.currentDevice().identifierForVendor.UUIDString
+                    
+                    request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
+                    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+                        {
+                            (response, data, error) in
+                            println(response)
+                    }
+                    
                     println("success")
                 }
                 else{

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>34376CF0-192F-4593-BABF-BE4B9D0D6D61</string>
+	<key>IDESourceControlProjectName</key>
+	<string>QRReaderDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0D10C06B4C95A11F567DBD8E1984D9D45111531</key>
+		<string>https://github.com/tl265/BiometricsLogin.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>QRReaderDemo/QRReaderDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0D10C06B4C95A11F567DBD8E1984D9D45111531</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tl265/BiometricsLogin.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0D10C06B4C95A11F567DBD8E1984D9D45111531</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0D10C06B4C95A11F567DBD8E1984D9D45111531</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BiometricsLogin</string>
+		</dict>
+	</array>
+</dict>
+</plist>
