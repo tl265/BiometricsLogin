@@ -33,7 +33,5 @@
 
 	}	
 
-	mysql_close($connection); // Closing Connection
-
 	
 ?>
