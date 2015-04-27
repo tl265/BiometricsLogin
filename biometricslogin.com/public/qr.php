@@ -13,13 +13,18 @@ include('../phpqrcode/qrlib.php');
 	$_SESSION['timestamp']=$codeContents;
 
     	// generating 
-    	QRcode::png($codeContents, $tempDir.'QR_timestamp.png', QR_ECLEVEL_L, 8); 
+    	QRcode::png($codeContents, $tempDir.'QR_timestamp.png', QR_ECLEVEL_L, 16); 
          
     	// displaying 
-	echo '<img src="localtmp/QR_timestamp.png" />'; 
 
 	header('Refresh: 2; URL=profile.php'); 
 ?>
 
+<!DOCTYPE html>
+<html>
+	<div align="center">
+		<?php echo '<img src="localtmp/QR_timestamp.png" />'; ?>
+	</div>
+</html>
 
 
