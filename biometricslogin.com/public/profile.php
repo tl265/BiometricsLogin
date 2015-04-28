@@ -29,7 +29,7 @@ include('session.php');
 		<div id="profile">
 			<b id="welcome">
 			Welcome : <i><?php echo $deviceid; ?></i> <br>
-			Login counts: <i><?php echo $usercount; ?></i>
+			Number of your logins: <i><?php echo $usercount; ?></i>
 			</b>
 			<b id="logout"><a href="logout.php">Log Out</a></b>
 		</div>

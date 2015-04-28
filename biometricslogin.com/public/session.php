@@ -7,7 +7,7 @@
 
 	$timestamp_check=$_SESSION['timestamp'];// Storing Session
 	$count = 0;
-	$maxiter=10;
+	$maxiter=30;
 	
 	do{	// wait until the timestamp has been acknowledged by an iphone and posted back to the database
 		sleep(2);
