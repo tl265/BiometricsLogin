@@ -1,27 +1,24 @@
 <?php
 include('../phpqrcode/qrlib.php');
 
-	session_start(); // Starting Session
 	$tempDir = sys_get_temp_dir().DIRECTORY_SEPARATOR; 
-
+	session_start(); // Starting Session
 	if(isset($_SESSION['timestamp'])){
 		unset($_SESSION['timestamp']);
 	}
-
     	$codeContents = (string)time(); 
-//	$codeContents = '1430102948';
 	$_SESSION['timestamp']=$codeContents;
 
-    	// generating 
+		
+    	// generating QR code
     	QRcode::png($codeContents, $tempDir.'QR_timestamp.png', QR_ECLEVEL_L, 16); 
          
-    	// displaying 
-
-	header('Refresh: 2; URL=profile.php'); 
+	header('Refresh: 1; URL=profile.php'); 
 ?>
 
 <!DOCTYPE html>
 <html>
+    	<!-- displayingl QR code -->
 	<div align="center">
 		<?php echo '<img src="localtmp/QR_timestamp.png" />'; ?>
 	</div>

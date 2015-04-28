@@ -5,10 +5,11 @@
 	$db = mysql_select_db("company", $connection);// Selecting Database
 	
 	session_start();// Starting Session
-
-	$timestamp_check=$_SESSION['timestamp'];// Storing Session
+	$timestamp_check=$_SESSION['timestamp'];// Fetch Session
+	session_write_close();
+	
 	$count = 0;
-	$maxiter=30;
+	$maxiter=59;
 	
 	do{	// wait until the timestamp has been acknowledged by an iphone and posted back to the database
 		if (connection_status() != CONNECTION_NORMAL){
@@ -21,14 +22,13 @@
 		print ' ';
 		ob_flush();
 		flush();
-		sleep(2);
+		sleep(1);
 	} while (($rows < 1) and ($count < $maxiter));
 
 
 	if ($rows == 0)
 	{
-		mysql_close($connection); // Closing Connection
-		print (string)$rows.(string)$count;
+		mysql_close($connection); // Closing Connection to database
 		exit("<script>location.href = 'qr.php'</script>");
 	}
 	else
