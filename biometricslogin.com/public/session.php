@@ -15,28 +15,26 @@
 			$count = $maxiter;
 			break;
 		}	
-		sleep(2);
 		$query = mysql_query("select * from token where timestamp='$timestamp_check'", $connection);
 		$rows = mysql_num_rows($query);
 		$count = $count + 1;
 		print ' ';
 		ob_flush();
 		flush();
+		sleep(2);
 	} while (($rows < 1) and ($count < $maxiter));
 
-	if ($count == $maxiter)
+
+	if ($rows == 0)
 	{
 		mysql_close($connection); // Closing Connection
-		header('Location: qr.php');
+		print (string)$rows.(string)$count;
+		exit("<script>location.href = 'qr.php'</script>");
 	}
 	else
 	{
 		$deviceid = mysql_fetch_assoc($query);
 		$deviceid = $deviceid['deviceid'];
-
-//		print $timestamp_check." ".$deviceid." ";
-//		print "rows".(string)$rows." ";
-//		print "counts".(string)$count." ";
 		$query = mysql_query("delete from token where timestamp='$timestamp_check'", $connection);
 
 	}	
