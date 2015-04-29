@@ -1,0 +1,27 @@
+1) enter the database from command line.
+	mysql -u root
+
+*) In MySql, a line won't be executed until the semicolon ";" is entered;
+
+2) create a database
+	create database company;
+	
+3) create a table call login
+	create table login( 
+	id int(10) not null default null auto_increament,
+	username varchar(255) not null default null,
+	usercount int unsigned not null default 0,
+	primary key (id)
+	);
+	
+4) create a table call token
+	create table token( 
+	tokenid int(11) not null default null auto_increament,
+	timestamp varchar(255) not null,
+	deviceid varchar(255) not null,
+	primary key (tokenid)
+	);
+
+5) quit
+	exit;
+	
